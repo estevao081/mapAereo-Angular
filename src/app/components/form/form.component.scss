@@ -1,0 +1,54 @@
+.headerToolBar span {
+    margin-left: 0.5em;
+    color: white;
+}
+
+.headerToolBar {
+    box-shadow: 1px 1px 3px rgb(161, 159, 159);
+    background-color: rgb(0, 103, 160);
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-card {
+    max-width: 80%;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-card-header {
+    justify-content: center;
+    padding: 15px;
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding-bottom: 1.6em;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    box-shadow: 1px 1px 3px rgb(161, 159, 159);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .headerToolBar img {
+        max-width: 56px;
+    }
+}

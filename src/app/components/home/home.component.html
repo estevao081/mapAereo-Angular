@@ -1,0 +1,76 @@
+<div>
+    <mat-toolbar class="headerToolBar">
+        <img src="/logo.png" alt="Sam's Club logo">
+        <span>mapAereo</span>
+    </mat-toolbar>
+</div>
+
+<div class="input">
+    <mat-form-field>
+        <mat-label>Pesquisar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Código, nome ou validade" #input>
+    </mat-form-field>
+    <button (click)="onAdd()" mat-mini-fab color="accent" aria-label="Add">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner diameter="40"></mat-spinner>
+</div>
+
+<div class="table" *ngIf="!isLoading">
+    <table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let product"> {{product.code}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let product" class="productName"> {{product.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Qtd </th>
+            <td mat-cell *matCellDef="let product"> {{product.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expiration">
+            <th mat-header-cell *matHeaderCellDef> Validade </th>
+            <td mat-cell *matCellDef="let product"> {{product.expiration}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Endereço </th>
+            <td mat-cell *matCellDef="let product"> {{product.address}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Ações</th>
+            <td mat-cell *matCellDef="let product">
+                <button (click)="onEdit(product)" mat-icon-button aria-label="Edit">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button (click)="onDelete(product)" mat-icon-button aria-label="Delete">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">Nenhum produto encontrado</td>
+        </tr>
+    </table>
+    <footer>
+        <mat-toolbar>
+            <span class="footer">Developed by: Thiago Dev</span>
+            <mat-icon>github-circle</mat-icon>
+        </mat-toolbar>
+    </footer>
+</div>
