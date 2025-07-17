@@ -1,7 +1,0 @@
-{
-    "/products": {
-        "target": "https://mapaereo.onrender.com/",
-        "secure": false,
-        "changeOrigin": true
-    }
-}
