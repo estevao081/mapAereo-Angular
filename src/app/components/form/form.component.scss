@@ -30,25 +30,6 @@ mat-card-actions {
     padding-bottom: 1.6em;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
-    font-size: small;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    box-shadow: 1px 1px 3px rgb(161, 159, 159);
-}
-
-.footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: small;
-    width: 100%;
-    flex-direction: column;
-}
-
 @media (max-width: 600px) {
     .headerToolBar img {
         max-width: 56px;
