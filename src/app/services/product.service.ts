@@ -15,7 +15,7 @@ export class ProductService {
   private readonly API = 'https://mapaereo.onrender.com/products'
 
   list(): Observable<Product[]> {
-    return this.client.get<Product[]>(this.API);
+    return this.client.get<Product[]>(`${this.API}/${"name"}`);
   }
 
   save(record: Partial<Product>) {
@@ -40,4 +40,11 @@ export class ProductService {
   findById(id: string) {
     return this.client.get<Product>(`${this.API}/${id}`);
   }
+
+  findByName(name: string): Observable<Product[]> {
+  return this.client.get<Product[]>(`${this.API}/name`, {
+    params: { nome: name }
+  });
+}
+
 }

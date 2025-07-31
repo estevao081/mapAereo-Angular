@@ -6,8 +6,8 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Product } from '../../models/product';
-import { ProductService } from '../../services/product.service';
+import { Product } from '../../../models/product';
+import { ProductService } from '../../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -16,7 +16,7 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-name',
   imports: [
     MatToolbarModule,
     MatFormFieldModule,
@@ -30,20 +30,15 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
     MatProgressSpinnerModule,
     MatSnackBarModule
   ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './name.component.html',
+  styleUrl: './name.component.scss'
 })
 
-export class HomeComponent {
+export class NameComponent {
   displayedColumns: string[] = ['code', 'name', 'quantity', 'expiration', 'address', 'actions'];
   data = new MatTableDataSource<Product>();
   products$: Observable<Product[]>
   isLoading = true;
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.data.filter = filterValue.trim().toLowerCase();
-  }
 
   constructor(
     private service: ProductService,
@@ -98,8 +93,15 @@ export class HomeComponent {
     });
   }
 
-  onSearchName() {
-    this.router.navigate(['findByName'], { relativeTo: this.route });
-  }
+  onSearchByName(name: string) {
+  this.service.findByName(name).subscribe({
+    next: (users) => {
+      this.data.data = users;
+    },
+    error: (err) => {
+      console.error('Erro ao buscar usuários:', err);
+    }
+  });
+}
 
 }
