@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 import { Observable } from 'rxjs';
@@ -42,9 +42,8 @@ export class ProductService {
   }
 
   findByName(name: string): Observable<Product[]> {
-  return this.client.get<Product[]>(`${this.API}/name`, {
-    params: { nome: name }
-  });
-}
+    const params = new HttpParams().set('nome', name);
+    return this.client.get<Product[]>(`${this.API}/name`, { params });
+  }
 
 }

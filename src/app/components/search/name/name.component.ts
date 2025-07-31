@@ -37,7 +37,6 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 export class NameComponent {
   displayedColumns: string[] = ['code', 'name', 'quantity', 'expiration', 'address', 'actions'];
   data = new MatTableDataSource<Product>();
-  products$: Observable<Product[]>
   isLoading = true;
 
   constructor(
@@ -45,9 +44,7 @@ export class NameComponent {
     private snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute
-  ) {
-    this.products$ = this.service.list();
-  }
+  ) {  }
 
   loadProducts(): void {
     this.isLoading = true;
