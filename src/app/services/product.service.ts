@@ -42,8 +42,8 @@ export class ProductService {
   }
 
   findByName(name: string): Observable<Product[]> {
-    const params = new HttpParams().set('nome', name);
-    return this.client.get<Product[]>(`${this.API}/${name}`, { params });
+    const params = new HttpParams().set('name', name);
+    return this.client.get<Product[]>(`${this.API}/search`, { params });
   }
 
 }

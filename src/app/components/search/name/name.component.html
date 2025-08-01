@@ -8,12 +8,14 @@
 <div class="input">
     <mat-form-field>
         <mat-label>Pesquisar</mat-label>
-        <input matInput placeholder="Digite o nome do produto" #input>
+        <input matInput placeholder="Digite o nome" [(ngModel)]="searchText">
     </mat-form-field>
-    <button (click)="onSearchByName(input.name)" mat-mini-fab color="accent" aria-label="Search" class="searchButton">
+
+    <button (click)="onSearchByName()" mat-mini-fab color="accent" aria-label="Search" class="searchButton">
         <mat-icon class="searchIcon">search</mat-icon>
     </button>
 </div>
+
 
 <div *ngIf="isLoading" class="spinner-container">
     <mat-spinner diameter="40"></mat-spinner>

@@ -9,10 +9,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../../../models/product';
 import { ProductService } from '../../../services/product.service';
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -28,7 +28,8 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
     MatIconModule,
     CommonModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
   ],
   templateUrl: './name.component.html',
   styleUrl: './name.component.scss'
@@ -44,7 +45,7 @@ export class NameComponent {
     private snackBar: MatSnackBar,
     private router: Router,
     private route: ActivatedRoute
-  ) {  }
+  ) { }
 
   loadProducts(): void {
     this.isLoading = true;
@@ -90,15 +91,18 @@ export class NameComponent {
     });
   }
 
-  onSearchByName(name: string) {
-  this.service.findByName(name).subscribe({
-    next: (users) => {
-      this.data.data = users;
-    },
-    error: (err) => {
-      console.error('Erro ao buscar usuários:', err);
-    }
-  });
-}
+  searchText = '';
+
+  onSearchByName() {
+    this.service.findByName(this.searchText).subscribe({
+      next: (products) => {
+        this.data.data = products;
+      },
+      error: (err) => {
+        console.error('Erro ao buscar produtos:', err);
+      }
+    });
+  }
+
 
 }
