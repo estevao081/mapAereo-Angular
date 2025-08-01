@@ -70,7 +70,7 @@ export class NameComponent {
   }
 
   onEdit(product: Product) {
-    this.router.navigate(['edit', product.id], { relativeTo: this.route });
+    this.router.navigate(['edit', product.id]);
   }
 
   onDelete(product: Product) {
@@ -94,15 +94,15 @@ export class NameComponent {
   searchText = '';
 
   onSearchByName() {
+    this.isLoading = true;
     this.service.findByName(this.searchText).subscribe({
       next: (products) => {
         this.data.data = products;
+        this.isLoading = false;
       },
       error: (err) => {
         console.error('Erro ao buscar produtos:', err);
       }
     });
   }
-
-
 }
