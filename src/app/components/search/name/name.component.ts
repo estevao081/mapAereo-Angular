@@ -38,7 +38,7 @@ import { FormsModule } from '@angular/forms';
 export class NameComponent {
   displayedColumns: string[] = ['code', 'name', 'quantity', 'expiration', 'address', 'actions'];
   data = new MatTableDataSource<Product>();
-  isLoading = true;
+  isLoading = false;
 
   constructor(
     private service: ProductService,
@@ -49,7 +49,12 @@ export class NameComponent {
 
   loadProducts(): void {
     this.isLoading = true;
-    this.service.list().subscribe({
+
+    const observable = this.searchText.trim()
+      ? this.service.findByName(this.searchText)
+      : this.service.list();
+
+    observable.subscribe({
       next: (products) => {
         this.data.data = products;
         this.isLoading = false;
