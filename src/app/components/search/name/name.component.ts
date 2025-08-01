@@ -60,11 +60,6 @@ export class NameComponent {
     });
   }
 
-  ngOnInit(): void {
-    this.loadProducts();
-  }
-
-
   onAdd() {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
