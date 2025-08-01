@@ -1,9 +1,14 @@
-<div>
-    <mat-toolbar class="headerToolBar">
-        <img src="/logo.png" alt="Sam's Club logo">
-        <span>mapAereo</span>
-    </mat-toolbar>
-</div>
+<mat-toolbar class="headerToolBar">
+    <img src="/logo.png" alt="Sam's Club logo">
+    <span>mapAereo</span>
+</mat-toolbar>
+
+<mat-toolbar class="headerToolBar2">
+    <button (click)="onCancel()" mat-icon-button aria-label="Back">
+        <mat-icon class="arrow">arrow_back</mat-icon>
+    </button>
+    <span>Pesquisar produtos</span>
+</mat-toolbar>
 
 <div class="input">
     <mat-form-field>
@@ -15,7 +20,6 @@
         <mat-icon class="searchIcon">search</mat-icon>
     </button>
 </div>
-
 
 <div *ngIf="isLoading" class="spinner-container">
     <mat-spinner diameter="40"></mat-spinner>

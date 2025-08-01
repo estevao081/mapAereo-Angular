@@ -11,9 +11,9 @@ import { ProductService } from '../../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-name',
@@ -44,7 +44,8 @@ export class NameComponent {
     private service: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   loadProducts(): void {
@@ -63,6 +64,10 @@ export class NameComponent {
         this.isLoading = false;
       }
     });
+  }
+
+  onCancel() {
+    this.location.back();
   }
 
   onAdd() {

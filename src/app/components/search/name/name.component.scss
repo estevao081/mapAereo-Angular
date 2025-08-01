@@ -8,6 +8,20 @@
     background-color: rgb(0, 103, 160);
 }
 
+.headerToolBar2 span {
+    margin-left: 0.5em;
+    color: white;
+}
+
+.headerToolBar2 {
+    box-shadow: 1px 1px 3px rgb(161, 159, 159);
+    background-color: rgb(0, 103, 160);
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
 .input {
     display: flex;
     justify-content: center;
@@ -40,6 +54,10 @@ td {
 table {
     box-shadow: 1px 1px 3px rgb(161, 159, 159);
     width: 100%;
+}
+
+.arrow {
+    color: white;
 }
 
 .spinner-container {
