@@ -44,7 +44,6 @@ export class NameComponent {
     private service: ProductService,
     private snackBar: MatSnackBar,
     private router: Router,
-    private route: ActivatedRoute,
     private location: Location
   ) { }
 
@@ -68,10 +67,6 @@ export class NameComponent {
 
   onCancel() {
     this.location.back();
-  }
-
-  onAdd() {
-    this.router.navigate(['new'], { relativeTo: this.route });
   }
 
   onEdit(product: Product) {

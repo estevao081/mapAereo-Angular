@@ -5,7 +5,12 @@
 
 <mat-card>
     <mat-card-header>
-        <mat-card-title>Cadastrar produto</mat-card-title>
+        <mat-toolbar class="headerToolBar2">
+            <button (click)="onCancel()" mat-icon-button aria-label="Back">
+                <mat-icon class="arrow">arrow_back</mat-icon>
+            </button>
+            <span>Cadastrar produto</span>
+        </mat-toolbar>
     </mat-card-header>
     <mat-card-content>
         <form [formGroup]="form">

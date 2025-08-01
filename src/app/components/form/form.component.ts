@@ -10,6 +10,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Location } from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-form',
@@ -20,7 +21,8 @@ import { Product } from '../../models/product';
     MatInputModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
