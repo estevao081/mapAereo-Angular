@@ -1,5 +1,5 @@
 [build]
-  publish = "dist/map-aereo-angular"
+  publish = "dist/map-aereo-angular/browser"
   command = "ng build --configuration production"
 
 [[redirects]]
