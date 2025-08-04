@@ -1,0 +1,61 @@
+.headerToolBar span {
+    margin-left: 0.5em;
+    color: white;
+}
+
+.headerToolBar {
+    box-shadow: 1px 1px 3px rgb(161, 159, 159);
+    background-color: rgb(0, 103, 160);
+}
+
+.headerToolBar2 span {
+    margin-left: 0.5em;
+    color: white;
+}
+
+.headerToolBar2 {
+    box-shadow: 1px 1px 3px rgb(161, 159, 159);
+    background-color: rgb(0, 103, 160);
+    border-radius: 10px;
+}
+
+.container {
+    height: 80vh;
+    width: 80vw;
+    margin: auto;
+}
+
+.card {
+    margin-top: 1.5em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    width: 100%;
+    color: rgb(0, 103, 160);
+    border-color: rgb(0, 103, 160);
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 35px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: rgb(0, 103, 160);
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .headerToolBar img {
+        max-width: 56px;
+    }
+}

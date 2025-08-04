@@ -60,11 +60,11 @@ export class CodeComponent {
         this.isLoading = false;
       },
       error: () => {
-        this.isLoading = false;
         this.snackBar.open('Erro ao carregar produtos', 'Fechar', {
           duration: 3000,
           verticalPosition: 'bottom'
         });
+        this.isLoading = false;
       }
     });
   }
