@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { Location } from '@angular/common'
 
 @Component({
-  selector: 'app-name',
+  selector: 'app-code',
   imports: [
     MatToolbarModule,
     MatFormFieldModule,
@@ -31,11 +31,11 @@ import { Location } from '@angular/common'
     MatSnackBarModule,
     FormsModule
   ],
-  templateUrl: './name.component.html',
-  styleUrl: './name.component.scss'
+  templateUrl: './code.component.html',
+  styleUrl: './code.component.scss'
 })
 
-export class NameComponent {
+export class CodeComponent {
   displayedColumns: string[] = ['code', 'name', 'quantity', 'expiration', 'address', 'actions'];
   data = new MatTableDataSource<Product>();
   isLoading = false;
@@ -51,8 +51,8 @@ export class NameComponent {
     this.isLoading = true;
 
     const observable = this.searchText.trim()
-      ? this.service.findByName(this.searchText)
-      : this.service.listByName();
+      ? this.service.findByCode(this.searchText)
+      : this.service.listByCode();
 
     observable.subscribe({
       next: (products) => {
@@ -97,9 +97,9 @@ export class NameComponent {
 
   searchText = '';
 
-  onSearchByName() {
+  onSearchByCode() {
     this.isLoading = true;
-    this.service.findByName(this.searchText).subscribe({
+    this.service.findByCode(this.searchText).subscribe({
       next: (products) => {
         this.data.data = products;
         this.isLoading = false;

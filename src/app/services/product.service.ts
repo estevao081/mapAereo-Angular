@@ -14,8 +14,20 @@ export class ProductService {
 
   private readonly API = 'https://mapaereo.onrender.com/products'
 
-  list(): Observable<Product[]> {
-    return this.client.get<Product[]>(`${this.API}/search`);
+  listByName(): Observable<Product[]> {
+    return this.client.get<Product[]>(`${this.API}/searchByName`);
+  }
+
+  listByCode(): Observable<Product[]> {
+    return this.client.get<Product[]>(`${this.API}/searchByCode`);
+  }
+
+  listByExpiration(): Observable<Product[]> {
+    return this.client.get<Product[]>(`${this.API}/searchByExpiration`);
+  }
+
+  listByAddress(): Observable<Product[]> {
+    return this.client.get<Product[]>(`${this.API}/searchByAddress`);
   }
 
   save(record: Partial<Product>) {
@@ -44,5 +56,20 @@ export class ProductService {
   findByName(name: string): Observable<Product[]> {
     const params = new HttpParams().set('name', name);
     return this.client.get<Product[]>(`${this.API}/searchByName`, { params });
+  }
+
+  findByCode(code: string): Observable<Product[]> {
+    const params = new HttpParams().set('code', code);
+    return this.client.get<Product[]>(`${this.API}/searchByCode`, { params });
+  }
+
+  findByExpiration(expiration: string): Observable<Product[]> {
+    const params = new HttpParams().set('expiration', expiration);
+    return this.client.get<Product[]>(`${this.API}/searchByExpiration`, { params });
+  }
+
+  findByAddress(address: string): Observable<Product[]> {
+    const params = new HttpParams().set('address', address);
+    return this.client.get<Product[]>(`${this.API}/searchByAddress`, { params });
   }
 }
