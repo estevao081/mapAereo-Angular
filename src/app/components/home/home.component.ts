@@ -43,4 +43,8 @@ export class HomeComponent {
   onSearchName() {
     this.router.navigate(['findByName'], { relativeTo: this.route });
   }
+
+  onSearchCode() {
+    this.router.navigate(['findByCode'], { relativeTo: this.route });
+  }
 }
