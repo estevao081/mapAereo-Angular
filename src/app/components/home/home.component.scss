@@ -20,7 +20,6 @@
 }
 
 .container {
-    height: 80vh;
     width: 80vw;
     margin: auto;
 }
@@ -35,7 +34,7 @@
     flex-direction: column;
 }
 
-button {
+.btnsP {
     width: 100%;
     color: rgb(0, 103, 160);
     border-color: rgb(0, 103, 160);
@@ -49,6 +48,30 @@ button {
     margin-top: 20px;
 }
 
+.btnsS {
+    width: 20%;
+    color: rgb(0, 103, 160);
+    border-color: rgb(0, 103, 160);
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px 35px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.space {
+    padding: 15px;
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin: 1.5em;
+}
+
 button:hover {
     background-color: rgb(0, 103, 160);
     color: white;
@@ -57,5 +80,10 @@ button:hover {
 @media (max-width: 600px) {
     .headerToolBar img {
         max-width: 56px;
+    }
+
+    .btnsS {
+        width: 100%;
+        padding: 5px;
     }
 }

@@ -11,12 +11,21 @@
                 <span>O que deseja fazer?</span>
             </mat-toolbar>
         </mat-card-header>
-        <mat-card-content class="buttons">
-            <button (click)="onAdd()">Cadastrar Produto</button>
-            <button (click)="onSearchCode()">Pesquisar por código</button>
-            <button (click)="onSearchName()">Pesquisar por nome</button>
-            <button (click)="onSearchExpiration()">Pesquisar por validade</button>
-            <button (click)="onSearchAddress()">Pesquisar por endereço</button>
+        <mat-card-content>
+            <div class="buttons">
+                <button class="btnsP" (click)="onSearchCode()">Pesquisar por código</button>
+                <button class="btnsP" (click)="onSearchName()">Pesquisar por nome</button>
+                <button class="btnsP" (click)="onSearchExpiration()">Pesquisar por validade</button>
+                <button class="btnsP" (click)="onSearchAddress()">Pesquisar por endereço</button>
+                <button class="btnsP" (click)="onAdd()">Cadastrar Produto</button>
+            </div>
+            <!--
+            <div class="loginContainer">
+                <button class="btnsS">Novo usuário</button>
+                <span class="space"></span>
+                <button class="btnsS">Login</button>
+            </div>
+            -->
         </mat-card-content>
     </mat-card>
 </div>

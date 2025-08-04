@@ -69,7 +69,6 @@ export class FormComponent {
 
   private onSuccess() {
     this.snackBar.open('Produto salvo com sucesso.', 'Fechar', { duration: 3000 })
-    this.onCancel();
   }
 
   private onError() {
