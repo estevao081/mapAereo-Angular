@@ -16,46 +16,67 @@
 .headerToolBar2 {
     box-shadow: 1px 1px 3px rgb(161, 159, 159);
     background-color: rgb(0, 103, 160);
-    border-radius: 10px;
-}
-
-.container {
-    height: 80vh;
-    width: 80vw;
+    width: 90%;
     margin: auto;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
-.card {
-    margin-top: 1.5em;
-}
-
-.buttons {
+.input {
     display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 
-button {
+.input button {
+    margin: 20px;
+}
+
+table .mat-row .mat-cell {
+    padding: 15px;
+}
+
+mat-form-field {
+    width: 70%;
+    padding-top: 15px;
+}
+
+tr,
+th,
+td {
+    text-align: center;
+}
+
+.productName {
+    max-width: 50px;
+    overflow: hidden;
+}
+
+table {
+    box-shadow: 1px 1px 3px rgb(161, 159, 159);
     width: 100%;
-    color: rgb(0, 103, 160);
-    border-color: rgb(0, 103, 160);
-    background-color: white;
-    border-radius: 10px;
-    outline: none;
-    padding: 10px 35px;
-    cursor: pointer;
-    transition: all 0.1s ease-in-out;
-    font-size: medium;
-    margin-top: 20px;
 }
 
-button:hover {
-    background-color: rgb(0, 103, 160);
+.arrow {
     color: white;
 }
 
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
 @media (max-width: 600px) {
+
     .headerToolBar img {
         max-width: 56px;
     }
+
+    tr,
+    td,
+    th {
+        font-size: smaller;
+        padding: 0;
+    }
+
 }
