@@ -4,28 +4,51 @@
         <span>mapAereo</span>
     </mat-toolbar>
 </div>
-<div class="card">
-    <mat-card class="container">
-        <mat-card-header>
-            <mat-toolbar class="headerToolBar2">
-                <span>O que deseja fazer?</span>
-            </mat-toolbar>
-        </mat-card-header>
-        <mat-card-content>
-            <div class="buttons">
-                <button class="btnsP" (click)="onSearchCode()">Pesquisar por código</button>
-                <button class="btnsP" (click)="onSearchName()">Pesquisar por nome</button>
-                <button class="btnsP" (click)="onSearchExpiration()">Pesquisar por validade</button>
-                <button class="btnsP" (click)="onSearchAddress()">Pesquisar por endereço</button>
-                <button class="btnsP" (click)="onAdd()">Cadastrar Produto</button>
-            </div>
-            <!--
-            <div class="loginContainer">
-                <button class="btnsS">Novo usuário</button>
-                <span class="space"></span>
-                <button class="btnsS">Login</button>
-            </div>
-            -->
-        </mat-card-content>
-    </mat-card>
+<div class="page-wrap">
+    <header class="topbar">
+        <div class="brand">Controle de Estoque</div>
+        <div class="actions">
+            <button class="link-btn" (click)="onLogin()">Login</button>
+            <button class="primary-btn" (click)="onRegister()">Cadastro</button>
+        </div>
+    </header>
+    <main class="container">
+        <section class="grid-cards">
+            <button class="card" (click)="onSearchName()">
+                <div class="icon">🔎</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Nome</h3>
+                    <p>Encontre produtos pelo nome</p>
+                </div>
+            </button>
+            <button class="card" (click)="onSearchCode()">
+                <div class="icon">🏷️</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Código</h3>
+                    <p>Encontre produtos pelo código</p>
+                </div>
+            </button>
+            <button class="card" (click)="onSearchAddress()">
+                <div class="icon">📦</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Endereço</h3>
+                    <p>Encontre produtos pelo endereço</p>
+                </div>
+            </button>
+            <button class="card" (click)="onSearchExpiration()">
+                <div class="icon">📅</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Validade</h3>
+                    <p>Encontre produtos pela validade</p>
+                </div>
+            </button>
+            <button class="card fullwidth" (click)="onAdd()">
+                <div class="icon">➕</div>
+                <div class="card-content">
+                    <h3>Cadastrar Produto</h3>
+                    <p>Crie um novo produto</p>
+                </div>
+            </button>
+        </section>
+    </main>
 </div>

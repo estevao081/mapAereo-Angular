@@ -1,0 +1,188 @@
+<div class="page-wrap">
+    <header class="topbar">
+        <div class="brand">Sistema de Estoque</div>
+        <div class="actions">
+            <button class="link-btn" (click)="onLogin()">Login</button>
+            <button class="primary-btn" (click)="onRegister()">Cadastro</button>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <section class="grid-cards">
+            <button class="card" (click)="searchBy('name')">
+                <div class="icon">🔎</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Nome</h3>
+                    <p>Encontre produtos pelo nome</p>
+                </div>
+            </button>
+
+
+            <button class="card" (click)="searchBy('sku')">
+                <div class="icon">🏷️</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Código/SKU</h3>
+                    <p>Encontre produtos pelo código</p>
+                </div>
+            </button>
+
+
+            <button class="card" (click)="searchBy('category')">
+                <div class="icon">📦</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Categoria</h3>
+                    <p>Encontre produtos pela categoria</p>
+                </div>
+            </button>
+
+
+            <button class="card" (click)="searchBy('expiry')">
+                <div class="icon">📅</div>
+                <div class="card-content">
+                    <h3>Pesquisar por Validade</h3>
+                    <p>Encontre produtos pela validade</p>
+                </div>
+            </button>
+
+
+            <button class="card fullwidth" (click)="createProduct()">
+                <div class="icon">➕</div>
+                <div class="card-content">
+                    <h3>Cadastrar Produto</h3>
+                    <p>Crie um novo produto</p>
+                </div>
+            </button>
+        </section>
+    </main>
+    <style>
+        :host {
+            display: block;
+            font-family: Inter, Roboto, Arial, sans-serif;
+            color: #222;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 28px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+            overflow: hidden;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 32px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .link-btn {
+            background: transparent;
+            border: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #1f2937;
+        }
+
+        .primary-btn {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+
+        .container {
+            padding: 28px 32px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+
+        .card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #f3f4f6;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+            cursor: pointer;
+            transition: transform .14s ease, box-shadow .14s ease;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .card.fullwidth {
+            grid-column: 1 / -1;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            background: linear-gradient(180deg, #eef2ff, #eef6ff);
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            margin: 4px 0 0 0;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .page-wrap {
+                margin: 16px;
+            }
+
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .icon {
+                width: 54px;
+                height: 54px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</div>

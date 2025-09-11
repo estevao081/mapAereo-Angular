@@ -55,4 +55,12 @@ export class HomeComponent {
   onSearchAddress() {
     this.router.navigate(['findByAddress'], { relativeTo: this.route });
   }
+
+  onLogin() {
+    console.log("login")
+  }
+
+  onRegister() {
+    console.log("auth")
+  }
 }
