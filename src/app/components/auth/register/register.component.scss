@@ -15,7 +15,7 @@ $bg-light: #f9fafb;
 
 .auth-page {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
     background: $bg-light;
@@ -28,6 +28,7 @@ $bg-light: #f9fafb;
         padding: 2rem;
         width: 100%;
         max-width: 420px;
+        margin-top: 2rem;
 
         h2 {
             text-align: center;
