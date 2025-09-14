@@ -1,0 +1,30 @@
+<div>
+  <mat-toolbar class="headerToolBar">
+    <img src="/logo.png" alt="Sam's Club logo">
+    <span>mapAereo</span>
+  </mat-toolbar>
+</div>
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>
+      <button class="arrow" (click)="onCancel()" mat-icon-button aria-label="Back">
+        <mat-icon class="arrow">arrow_back</mat-icon>
+      </button>
+      Acessar Conta
+    </h2>
+    <form>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Digite seu email" />
+      </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" placeholder="Digite sua senha" />
+      </div>
+      <button class="btn btn-primary">Entrar</button>
+    </form>
+    <p class="switch-text">
+      Não tem conta? <a href="/cadastro">Criar agora</a>
+    </p>
+  </div>
+</div>

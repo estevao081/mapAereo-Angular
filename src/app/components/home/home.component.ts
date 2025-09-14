@@ -57,10 +57,10 @@ export class HomeComponent {
   }
 
   onLogin() {
-    console.log("login")
+    this.router.navigate(['auth/login'], {relativeTo: this.route })
   }
 
   onRegister() {
-    console.log("auth")
+    this.router.navigate(['auth/register'], {relativeTo: this.route })
   }
 }

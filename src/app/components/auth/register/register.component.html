@@ -1,0 +1,51 @@
+<div>
+  <mat-toolbar class="headerToolBar">
+    <img src="/logo.png" alt="Sam's Club logo">
+    <span>mapAereo</span>
+  </mat-toolbar>
+</div>
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>
+      <button class="arrow" (click)="onCancel()" mat-icon-button aria-label="Back">
+        <mat-icon class="arrow">arrow_back</mat-icon>
+      </button>
+      Criar Conta
+    </h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>Nome</label>
+        <input type="text" formControlName="nome" placeholder="Digite seu nome" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Digite seu email" />
+      </div>
+
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" formControlName="senha" placeholder="Crie uma senha" />
+      </div>
+
+      <div class="form-group">
+        <label>Confirmar Senha</label>
+        <input type="password" formControlName="confirmarSenha" placeholder="Repita sua senha" />
+        <small *ngIf="registerForm.hasError('mismatch') && registerForm.get('confirmarSenha')?.touched"
+          class="error-text">
+          As senhas não conferem
+        </small>
+      </div>
+
+      <button type="submit" class="btn btn-secondary" [disabled]="!registerForm.valid">
+        Cadastrar
+      </button>
+    </form>
+
+    <p class="switch-text">
+      Já tem uma conta? <a routerLink="/login">Entrar</a>
+    </p>
+  </div>
+</div>
